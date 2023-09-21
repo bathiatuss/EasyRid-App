@@ -1,0 +1,37 @@
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
+
+import colors from "C:\\Users\\ataka\\OneDrive\\Masaüstü\\React Native\\DoneWithIt\\app\\config\\colors.js";
+
+function AppButton({ title, backgroundColor, onPress }) {
+  const buttonStyle = {
+    ...styles.button,
+    backgroundColor: backgroundColor || colors.primary,
+  };
+
+  return (
+    <TouchableOpacity style={buttonStyle} onPress={onPress}>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
+  );
+}
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: colors.primary,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 15,
+    width: "90%",
+    margin: 10,
+  },
+  text: {
+    color: colors.white,
+    fontSize: 18,
+    textTransform: "uppercase",
+    fontWeight: "bold",
+  },
+});
+
+export default AppButton;
