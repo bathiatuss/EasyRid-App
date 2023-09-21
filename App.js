@@ -4,15 +4,10 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 import AppText from "./app/components/AppText/AppText";
 import Card from "./app/components/Card";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 function App(props) {
-  return (
-    <Card
-      title={"Red Jacket for sale!"}
-      subTitle={"$100"}
-      image={require("..\\app\\assets\\jacket.jpg")}
-    />
-  );
+  return <ListingDetailsScreen />;
 }
 
 export default App;
