@@ -9,7 +9,7 @@ function ListItem({ title, subTitle, image }) {
       <Image style={styles.image} source={image}></Image>
       <View style={styles.sellerInfo}>
         <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle + " Listings"}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
     </View>
   );

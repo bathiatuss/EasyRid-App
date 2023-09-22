@@ -5,9 +5,10 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import AppText from "./app/components/AppText/AppText";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 function App(props) {
-  return <ViewImageScreen />;
+  return <MessagesScreen />;
 }
 
 export default App;

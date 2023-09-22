@@ -1,5 +1,8 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, SafeAreaView } from "react-native";
 import React from "react";
+import ListItem from "../components/ListItem";
+
+import Screen from "../components/Screen";
 
 const messages = [
   {
@@ -22,13 +25,22 @@ const messages = [
   },
 ];
 
-export default function MessagesScreen() {
+function MessagesScreen() {
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(messages) => messages.id.toString()}
-    />
+    <Screen>
+      <FlatList
+        data={messages}
+        keyExtractor={(messages) => messages.id.toString()}
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.title}
+            subTitle={item.description}
+            image={item.image}
+          />
+        )}
+      />
+    </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+export default MessagesScreen;
