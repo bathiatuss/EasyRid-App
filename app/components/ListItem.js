@@ -18,6 +18,7 @@ function ListItem({ title, subTitle, image }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    padding: 15,
   },
   sellerInfo: { flexDirection: "column" },
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
