@@ -8,10 +8,8 @@ function ListItem({ title, subTitle, image }) {
     <View style={styles.container}>
       <Image style={styles.image} source={image}></Image>
       <View style={styles.sellerInfo}>
-        <AppText style={styles.sellerName}>{title}</AppText>
-        <AppText style={styles.sellerListings}>
-          {subTitle + " Listings"}
-        </AppText>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subTitle}>{subTitle + " Listings"}</AppText>
       </View>
     </View>
   );
@@ -20,12 +18,11 @@ function ListItem({ title, subTitle, image }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "blue",
   },
   sellerInfo: { flexDirection: "column" },
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
-  sellerName: { fontWeight: "500" },
-  sellerListings: { color: colors.medium },
+  title: { fontSize: 24 },
+  subTitle: { color: colors.medium },
 });
 
 export default ListItem;
