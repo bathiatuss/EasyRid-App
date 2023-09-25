@@ -9,6 +9,9 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
   return (
     <GestureHandlerRootView>
+      {
+        //swipeable component is not working properly. we need to wrap it inside the gestureHandlerRootView
+      }
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
           <View style={styles.container}>
@@ -27,7 +30,6 @@ function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    padding: 15,
   },
   sellerInfo: { flexDirection: "column" },
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
