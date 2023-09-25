@@ -8,9 +8,7 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 
 function App(props) {
-  return;
-  console.log("-m expo updated");
-  <MessagesScreen />;
+  return <MessagesScreen />;
 }
 
 export default App;
