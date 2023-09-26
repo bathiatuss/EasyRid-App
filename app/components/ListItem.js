@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 15,
+    backgroundColor: colors.white,
   },
   sellerInfo: { flexDirection: "column" },
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
