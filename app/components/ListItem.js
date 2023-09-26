@@ -1,31 +1,41 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableHighlight } from "react-native";
 import AppText from "./AppText/AppText";
 import colors from "../config/colors";
 
-function ListItem({ title, subTitle, image }) {
+import Swipeable from "react-native-gesture-handler/Swipeable";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
+function ListItem({ title, subTitle, image, onPress, renderRightActions }) {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image}></Image>
-      <View style={styles.sellerInfo}>
-        <AppText style={styles.sellerName}>{title}</AppText>
-        <AppText style={styles.sellerListings}>
-          {subTitle + " Listings"}
-        </AppText>
-      </View>
-    </View>
+    <GestureHandlerRootView>
+      {
+        //swipeable component is not working properly. we need to wrap it inside the gestureHandlerRootView
+      }
+      <Swipeable renderRightActions={renderRightActions}>
+        <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+          <View style={styles.container}>
+            <Image style={styles.image} source={image}></Image>
+            <View style={styles.sellerInfo}>
+              <AppText style={styles.title}>{title}</AppText>
+              <AppText style={styles.subTitle}>{subTitle}</AppText>
+            </View>
+          </View>
+        </TouchableHighlight>
+      </Swipeable>
+    </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "blue",
+    padding: 15,
   },
   sellerInfo: { flexDirection: "column" },
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
-  sellerName: { fontWeight: "500" },
-  sellerListings: { color: colors.medium },
+  title: { fontSize: 24 },
+  subTitle: { color: colors.medium },
 });
 
 export default ListItem;
