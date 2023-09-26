@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
   image: { height: 70, width: 70, borderRadius: 35, marginRight: 10 },
   title: { fontSize: 24 },
   subTitle: { color: colors.medium },
+  title: { fontSize: 24 },
+  subTitle: { color: colors.medium },
 });
 
 export default ListItem;
