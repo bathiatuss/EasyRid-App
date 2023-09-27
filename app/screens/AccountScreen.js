@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
+
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
@@ -8,14 +9,16 @@ import AppText from "../components/AppText/AppText";
 import Icon from "../components/Icon";
 import ListItemSeperator from "../components/ListItemSeperator";
 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 const menuItems = [
   {
-    item: "My Listings",
+    title: "My Listings",
     icon: { name: "format-list-bulleted" },
     backgroundColor: colors.primary,
   },
   {
-    item: "My Messages",
+    title: "My Messages",
     icon: { name: "email" },
     backgroundColor: colors.secondary,
   },
@@ -23,7 +26,7 @@ const menuItems = [
 
 function AccountScreen() {
   return (
-    <Screen>
+    <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
           title={"atakan"}
@@ -35,15 +38,33 @@ function AccountScreen() {
         <FlatList
           data={menuItems}
           keyExtractor={(menuItems) => menuItems.item}
+          ItemSeparatorComponent={ListItemSeperator}
           renderItem={({ item }) => (
-            <ListItem title={item.title} ImageComponent={item} />
+            <ListItem
+              title={item.title}
+              ImageComponent={
+                <Icon
+                  name={item.icon.name}
+                  backgroundColor={item.backgroundColor}
+                />
+              }
+            />
           )}
         ></FlatList>
       </View>
+      <ListItem
+        title={"Log Out"}
+        ImageComponent={
+          <Icon name={"logout"} backgroundColor={colors.yellow} />
+        }
+      />
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: { backgroundColor: colors.light },
+  container: { marginVertical: 20 },
+});
 
 export default AccountScreen;
