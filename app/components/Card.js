@@ -21,8 +21,7 @@ const styles = StyleSheet.create({
   background: { backgroundColor: "#f8f4f4" },
   cardContainer: {
     backgroundColor: "#fff",
-    margin: 20,
-    marginTop: 80,
+    margin: 15,
     borderRadius: 20,
     overflow: "hidden",
   },
