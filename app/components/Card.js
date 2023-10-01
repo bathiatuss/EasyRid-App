@@ -18,7 +18,6 @@ function Card({ title, subTitle, image }) {
 }
 
 const styles = StyleSheet.create({
-  background: { backgroundColor: "#f8f4f4" },
   cardContainer: {
     backgroundColor: "#fff",
     margin: 15,
