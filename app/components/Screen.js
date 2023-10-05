@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   screen: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0, //expo constants statusbarheight
     flex: 1,
-    backgroundColor: "#f8f4f4",
   },
 });
 
