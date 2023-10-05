@@ -16,11 +16,13 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
 
 import colors from "./app/config/colors";
+import AppPicker from "./app/components/AppPicker";
 
 function App(props) {
   return (
     <Screen>
-      <AppTextInput placeholder={"Username"} icon={"email"} />
+      <AppPicker icon={"apps"} placeholder={"Category"} />
+      <AppTextInput icon={"email"} placeholder={"Email"} />
     </Screen>
   );
 }
