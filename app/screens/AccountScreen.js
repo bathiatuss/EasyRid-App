@@ -5,7 +5,7 @@ import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import AppButon from "../components/AppButton";
-import AppText from "../components/AppText/AppText";
+import AppText from "../components/AppText";
 import Icon from "../components/Icon";
 import ListItemSeperator from "../components/ListItemSeperator";
 

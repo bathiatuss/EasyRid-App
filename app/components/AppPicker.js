@@ -4,66 +4,66 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Modal,
+  Button,
   FlatList,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 import { Platform } from "react-native";
 
+import AppText from "./AppText";
 import Screen from "./Screen";
 import defaultStyles from "../config/styles";
-import AppText from "./AppText/AppText";
-import { Button } from "react-native";
+import { render } from "react-dom";
 import PickerItem from "./PickerItem";
-function AppPicker({ icon, items, onSelectItem, placeholder, selectedItem }) {
+export default function AppPicker({
+  icon,
+  placeholder,
+  items,
+  onSelectItem,
+  selectedItem,
+  ...otherProps
+}) {
   const [modalVisible, setModalVisible] = useState(false);
-
-  const categories = [
-    {
-      label: "Furniture",
-      value: 1,
-    },
-    {
-      label: "Clothing",
-      value: 2,
-    },
-    {
-      label: "Cameras",
-      value: 3,
-    },
-  ];
-
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
         <View style={styles.container}>
           {icon && (
             <MaterialCommunityIcons
-              style={styles.icon}
               name={icon}
               size={20}
               color={defaultStyles.colors.medium}
             />
           )}
           <AppText style={styles.text}>
-            {selectedItem ? selectedItem : placeholder}
+            {selectedItem ? selectedItem.label : placeholder}
           </AppText>
           <MaterialCommunityIcons
-            style={styles.icon}
-            name={"chevron-down"}
+            name="chevron-down"
             size={20}
+            color={defaultStyles.colors.medium}
           />
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
-        <Button title={"Close"} onPress={() => setModalVisible(false)} />
-        <FlatList
-          data={categories}
-          keyExtractor={(item) => item.value.toString()}
-          renderItem={({ item }) => (
-            <PickerItem label={item.label} onPress={() => console.log(item)} />
-          )}
-        ></FlatList>
+        <Screen>
+          {/* the "title={"close"}" code causes the error. */}
+          <Button title="Close" onPress={() => setModalVisible(false)} />
+          <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => (
+              <PickerItem
+                label={item.label}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
+              />
+            )}
+          />
+        </Screen>
       </Modal>
     </>
   );
@@ -80,11 +80,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 10,
-    marginTop: 3,
   },
   text: {
     flex: 1,
   },
 });
-
-export default AppPicker;

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import { View, Image, StyleSheet } from "react-native";
 
-import AppText from "../components/AppText/AppText";
+import AppText from "../components/AppText";
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
 

@@ -1,9 +1,10 @@
-import React from "react";
-import { TextInput } from "react-native";
+import React, { useState } from "react";
+import { Text } from "react-native";
+import { TextInput, Switch } from "react-native";
 
 import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
-import AppText from "./app/components/AppText/AppText";
+import AppText from "./app/components/AppText";
 import Card from "./app/components/Card";
 import ListItem from "./app/components/ListItem";
 import AppTextInput from "./app/components/AppTextInput";
@@ -17,14 +18,8 @@ import ListingScreen from "./app/screens/ListingScreen";
 
 import colors from "./app/config/colors";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
-function App(props) {
-  return (
-    <Screen>
-      <AppPicker icon={"apps"} placeholder={"Category"} />
-      <AppTextInput icon={"email"} placeholder={"Email"} />
-    </Screen>
-  );
+export default function App(props) {
+  return <LoginScreen />;
 }
-
-export default App;

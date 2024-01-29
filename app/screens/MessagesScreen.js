@@ -56,6 +56,7 @@ function MessagesScreen() {
         ItemSeparatorComponent={ListItemSeperator}
         refreshing={refreshing}
         onRefresh={() => {
+          //that an example. its not functional.
           setMessages([
             {
               id: 3,
