@@ -16,6 +16,7 @@ import Screen from "./Screen";
 import defaultStyles from "../config/styles";
 import { render } from "react-dom";
 import PickerItem from "./PickerItem";
+
 export default function AppPicker({
   icon,
   placeholder,
@@ -48,7 +49,6 @@ export default function AppPicker({
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
         <Screen>
-          {/* the "title={"close"}" code causes the error. */}
           <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}

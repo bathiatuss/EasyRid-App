@@ -19,7 +19,15 @@ import ListingScreen from "./app/screens/ListingScreen";
 import colors from "./app/config/colors";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
+import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import AppFormPicker from "./app/components/forms/AppFormPicker";
 
 export default function App(props) {
-  return <LoginScreen />;
+  return (
+    // <Screen>
+    //   <AppFormPicker />
+    // </Screen>
+    <ListingEditScreen />
+  );
 }
