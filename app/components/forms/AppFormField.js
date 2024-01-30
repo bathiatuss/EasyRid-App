@@ -1,5 +1,5 @@
-import AppButton from "./AppButton";
-import AppTextInput from "./AppTextInput";
+import AppButton from "../AppButton";
+import AppTextInput from "../AppTextInput";
 import ErrorMessage from "./ErrorMessage";
 import { useFormikContext } from "formik";
 

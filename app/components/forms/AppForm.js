@@ -10,11 +10,11 @@ export default function AppForm({
 }) {
   return (
     <Formik
-      initialValues={{ initialValues }}
+      initialValues={initialValues}
       onSubmit={onSubmit}
       validationSchema={validationSchema}
     >
-      {() => <>({children})</>}
+      {() => <>{children}</>}
     </Formik>
   );
 }
