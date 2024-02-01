@@ -3,14 +3,18 @@ import React from "react";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image }) {
+function Card({ title, subTitle, image, numberOfLines }) {
   return (
     <View style={styles.background}>
       <View style={styles.cardContainer}>
         <Image style={styles.image} source={image} />
         <View style={styles.detailsContainer}>
-          <AppText style={styles.title}>{title}</AppText>
-          <AppText style={styles.subTitle}>{subTitle}</AppText>
+          <AppText numberOfLines={numberOfLines} style={styles.title}>
+            {title}
+          </AppText>
+          <AppText numberOfLines={numberOfLines} style={styles.subTitle}>
+            {subTitle}
+          </AppText>
         </View>
       </View>
     </View>

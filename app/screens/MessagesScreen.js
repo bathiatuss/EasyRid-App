@@ -10,8 +10,10 @@ import ListItemDeleteAction from "../components/ListItemDeleteAction";
 const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at mauris quis libero consequat consectetur. Quisque at ex ac mauris congue bibendum. Integer ut nisi ut lectus rutrum varius. Fusce pulvinar turpis id lacinia commodo. Nam ac libero eget sem sodales ultricies. Nullam eget est eu elit hendrerit tincidunt sit amet vitae ipsum. Maecenas quis arcu at leo varius aliquet. Nulla facilisi. Proin ac risus eget ex vehicula gravida.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at mauris quis libero consequat consectetur. Quisque at ex ac mauris congue bibendum. Integer ut nisi ut lectus rutrum varius. Fusce pulvinar turpis id lacinia commodo. Nam ac libero eget sem sodales ultricies. Nullam eget est eu elit hendrerit tincidunt sit amet vitae ipsum. Maecenas quis arcu at leo varius aliquet. Nulla facilisi. Proin ac risus eget ex vehicula gravida.",
     image: require("../assets/mosh.jpg"),
   },
   {
@@ -45,12 +47,15 @@ function MessagesScreen() {
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
+            titleLines={2}
             subTitle={item.description}
+            subTitleLines={5}
             image={item.image}
             onPress={() => console.log("Message Selected", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
+            showChevrons={true}
           />
         )}
         ItemSeparatorComponent={ListItemSeperator}

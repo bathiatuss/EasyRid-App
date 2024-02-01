@@ -48,7 +48,7 @@ export default function ListingEditScreen() {
           maxLenght={255}
           multiline
           name="description"
-          numberOfLinem={3}
+          numberOfLine={3}
           placeholder="Description"
         />
         <SubmitButton title="Post" />

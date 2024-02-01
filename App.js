@@ -24,10 +24,5 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import AppFormPicker from "./app/components/forms/AppFormPicker";
 
 export default function App(props) {
-  return (
-    // <Screen>
-    //   <AppFormPicker />
-    // </Screen>
-    <ListingEditScreen />
-  );
+  return <ListingEditScreen />;
 }
