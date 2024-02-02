@@ -34,12 +34,14 @@ export default function ListingEditScreen() {
       >
         <AppFormField maxLenght={255} name="title" placeholder="Title" />
         <AppFormField
+          containerWidht="30%"
           keyBoardType="numeric"
-          maxLenght={8} //100000.99
+          maxLenght={8} //9999.99
           name="price"
           placeholder="Price"
         />
         <AppFormPicker
+          containerWidth="55%"
           items={categories}
           name="category"
           placeholder="Category"

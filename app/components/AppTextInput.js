@@ -4,9 +4,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { TextInput } from "react-native";
 
 import defaultStyles from "../config/styles";
-function AppTextInput({ icon, /* containerWidht,*/ ...otherProps }) {
+function AppTextInput({ icon, containerWidht, ...otherProps }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width: containerWidht }]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
