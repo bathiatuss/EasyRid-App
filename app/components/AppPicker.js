@@ -18,15 +18,17 @@ export default function AppPicker({
   icon,
   placeholder,
   items,
+  containerWidth,
   onSelectItem,
   selectedItem,
+  numColumns,
   ...otherProps
 }) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
+        <View style={[styles.container, { width: containerWidth }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -47,19 +49,49 @@ export default function AppPicker({
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
-        <Screen>
-          <Button title="Close" onPress={() => setModalVisible(false)} />
+        <Button
+          color={defaultStyles.colors.primary}
+          title="Close"
+          onPress={() => setModalVisible(false)}
+        />
+        <Screen style={styles.screen}>
           <FlatList
+            columnWrapperStyle={{
+              //flex:1,//its not change anything when its removed
+              justifyContent: "space-around",
+              height: 120,
+              alignContent: "space-between",
+            }}
+            numColumns={numColumns}
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
-                label={item.label}
-                onPress={() => {
-                  setModalVisible(false);
-                  onSelectItem(item);
+              <View
+                style={{
+                  alignItems: "center",
                 }}
-              />
+              >
+                <View
+                  style={{
+                    borderRadius: 50,
+                    padding: 10,
+                    backgroundColor: item.color,
+                  }}
+                >
+                  <MaterialCommunityIcons // icons are not touchable!!!BUG
+                    name={item.icon}
+                    size={50}
+                    color={defaultStyles.colors.white}
+                  />
+                </View>
+                <PickerItem
+                  label={item.label}
+                  onPress={() => {
+                    setModalVisible(false);
+                    onSelectItem(item);
+                  }}
+                ></PickerItem>
+              </View>
             )}
           />
         </Screen>
@@ -87,4 +119,5 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
+  screen: {},
 });
