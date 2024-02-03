@@ -18,8 +18,9 @@ export default function AppPicker({
   icon,
   placeholder,
   items,
-  containerWidth,
+  containerWidth = "100%",
   onSelectItem,
+  PickerItemComponent = PickerItem,
   selectedItem,
   numColumns,
   ...otherProps
@@ -49,49 +50,20 @@ export default function AppPicker({
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
-        <Button
-          color={defaultStyles.colors.primary}
-          title="Close"
-          onPress={() => setModalVisible(false)}
-        />
-        <Screen style={styles.screen}>
+        <Screen>
+          <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
-            columnWrapperStyle={{
-              //flex:1,//its not change anything when its removed
-              justifyContent: "space-around",
-              height: 120,
-              alignContent: "space-between",
-            }}
             numColumns={numColumns}
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <View
-                style={{
-                  alignItems: "center",
+              <PickerItemComponent
+                item={item}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
                 }}
-              >
-                <View
-                  style={{
-                    borderRadius: 50,
-                    padding: 10,
-                    backgroundColor: item.color,
-                  }}
-                >
-                  <MaterialCommunityIcons // icons are not touchable!!!BUG
-                    name={item.icon}
-                    size={50}
-                    color={defaultStyles.colors.white}
-                  />
-                </View>
-                <PickerItem
-                  label={item.label}
-                  onPress={() => {
-                    setModalVisible(false);
-                    onSelectItem(item);
-                  }}
-                ></PickerItem>
-              </View>
+              />
             )}
           />
         </Screen>
@@ -105,7 +77,6 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     flexDirection: "row",
-    width: "%100",
     padding: 15,
     marginVertical: 10,
   },
@@ -119,5 +90,4 @@ const styles = StyleSheet.create({
   text: {
     flex: 1,
   },
-  screen: {},
 });
