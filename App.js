@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 // import { TextInput, Switch } from "react-native";
 
 // import Icon from "./app/components/Icon";
-// import Screen from "./app/components/Screen";
+import Screen from "./app/components/Screen";
 // import AppText from "./app/components/AppText";
 // import Card from "./app/components/Card";
 // import ListItem from "./app/components/ListItem";
 // import AppTextInput from "./app/components/AppTextInput";
 import * as ImagePicker from "expo-image-picker";
 import * as Permisions from "expo-permissions";
+import { Button, Image } from "react-native";
+import ImageInput from "./app/components/ImageInput";
 
 // import WelcomeScreen from "./app/screens/WelcomeScreen";
 // import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -26,19 +28,16 @@ import * as Permisions from "expo-permissions";
 // import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App(props) {
-  const requestPermission = async () => {
-    // const result = await Permisions.askAsync(
-    //   Permisions.CAMERA_ROLL,
-    //   Permisions.LOCATION
-    // );
-    // result.granted;
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert("You need to enable permission to library");
-  };
+  const [imageUri, setImageUri] = useState();
 
-  useEffect(() => {
-    requestPermission;
-  }, []);
-
-  return <Screen></Screen>;
+  return (
+    <Screen>
+      <ImageInput
+        imageUri={imageUri}
+        onChangeImage={(uri) => {
+          setImageUri(uri);
+        }}
+      />
+    </Screen>
+  );
 }
