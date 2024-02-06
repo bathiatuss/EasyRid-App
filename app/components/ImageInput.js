@@ -1,9 +1,10 @@
 import {
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
   StyleSheet,
   Touchablei,
   Image,
+  Alert,
 } from "react-native";
 import { React, useState, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
@@ -12,17 +13,27 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 
 export default function ImageInput({ imageUri, onChangeImage }) {
+  useEffect(() => {
+    requestPermission;
+  }, []);
+
   //permission request process
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!granted) alert("You need to enable permission to library");
   };
 
-  useEffect(() => {
-    requestPermission;
-  }, []);
+  //handeling delete action
+  const handlePress = () => {
+    if (!imageUri) selectImage();
+    else
+      Alert.alert("Delete", "Are you sure you want to delete this image?", [
+        { text: "Yes", onPress: () => onChangeImage(null) },
+        { text: "No" },
+      ]);
+  };
 
-  //image selection process
+  //image selection
   const selectImage = async () => {
     try {
       const result = await ImagePicker.launchImageLibraryAsync();
@@ -33,27 +44,33 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   };
 
   return (
-    <TouchableOpacity style={styles.container} onPress={selectImage}>
-      {imageUri ? ( //for showing more than one image use flatlist* create imageinputlist comp.
-        <Image source={{ uri: imageUri }} style={styles.image} />
-      ) : (
-        <MaterialCommunityIcons
-          name="camera"
-          size={30}
-          color={defaultStyles.colors.medium}
-        />
-      )}
-    </TouchableOpacity>
+    <TouchableWithoutFeedback onPress={handlePress}>
+      <View style={styles.container}>
+        {!imageUri && (
+          <MaterialCommunityIcons
+            color={defaultStyles.colors.medium}
+            name="camera"
+            size={40}
+          />
+        )}
+        {imageUri && <Image source={{ uri: imageUri }} style={styles.image} />}
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 const styles = StyleSheet.create({
-  image: { marginLeft: 50, width: 100, borderRadius: 20, height: 100 },
   container: {
-    borderRadius: 7,
-    height: 50,
-    width: 50,
-    backgroundColor: defaultStyles.colors.light,
     alignItems: "center",
+    backgroundColor: defaultStyles.colors.light,
+    borderRadius: 15,
+    height: 100,
     justifyContent: "center",
+    marginVertical: 10,
+    overflow: "hidden",
+    width: 100,
+  },
+  image: {
+    height: "100%",
+    width: "100%",
   },
 });

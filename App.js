@@ -12,6 +12,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as Permisions from "expo-permissions";
 import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
+import ImageInputList from "./app/components/ImageInputList";
 
 // import WelcomeScreen from "./app/screens/WelcomeScreen";
 // import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -32,6 +33,7 @@ export default function App(props) {
 
   return (
     <Screen>
+      {/* <ImageInputList /> */}
       <ImageInput
         imageUri={imageUri}
         onChangeImage={(uri) => {
