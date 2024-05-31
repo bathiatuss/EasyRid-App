@@ -23,7 +23,7 @@ export default function ImageInput({ imageUri, onChangeImage }) {
     if (!granted) alert("You need to enable permission to library");
   };
 
-  //handeling delete action
+  //handeling press event
   const handlePress = () => {
     if (!imageUri) selectImage();
     else
@@ -36,7 +36,10 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   //image selection
   const selectImage = async () => {
     try {
-      const result = await ImagePicker.launchImageLibraryAsync();
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 0.5,
+      });
       if (!result.canceled) onChangeImage(result.uri);
     } catch (error) {
       console.log("Error reading an image", error);

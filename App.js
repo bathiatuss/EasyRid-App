@@ -13,6 +13,7 @@ import * as Permisions from "expo-permissions";
 import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
 import ImageInputList from "./app/components/ImageInputList";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 // import WelcomeScreen from "./app/screens/WelcomeScreen";
 // import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -29,17 +30,5 @@ import ImageInputList from "./app/components/ImageInputList";
 // import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default function App(props) {
-  const [imageUri, setImageUri] = useState();
-
-  return (
-    <Screen>
-      {/* <ImageInputList /> */}
-      <ImageInput
-        imageUri={imageUri}
-        onChangeImage={(uri) => {
-          setImageUri(uri);
-        }}
-      />
-    </Screen>
-  );
+  return <ListingEditScreen />;
 }

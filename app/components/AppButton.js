@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-import colors from "C:\\Users\\ataka\\OneDrive\\Masaüstü\\React Native\\DoneWithIt\\app\\config\\colors.js";
+import colors from "../config/colors";
 
 function AppButton({ title, backgroundColor, onPress }) {
   const buttonStyle = {
