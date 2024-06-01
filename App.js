@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 // import { Text } from "react-native";
 // import { TextInput, Switch } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 
 // import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
@@ -29,6 +31,30 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 // import AppFormPicker from "./app/components/forms/AppFormPicker";
 // import ListingEditScreen from "./app/screens/ListingEditScreen";
 
+const Tweets = () => (
+  <Screen>
+    <Text>Tweets</Text>
+  </Screen>
+);
+
+const TweetDetails = () => (
+  <Screen>
+    <Text>Tweet Details</Text>
+  </Screen>
+);
+
+const Stack = createNativeStackNavigator();
+const StackNavigator = () => (
+  <StackNavigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetails" component={TweetDetails} />
+  </StackNavigator>
+);
+
 export default function App(props) {
-  return <ListingEditScreen />;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
