@@ -13,7 +13,7 @@ export default function CategoryPickerItem({ item, onPress }) {
           size={80}
         />
       </TouchableOpacity>
-      <Text style={styles.label}>{item.label}</Text>
+      <AppText style={styles.label}>{item.label}</AppText>
     </View>
   );
 }

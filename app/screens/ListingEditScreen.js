@@ -1,10 +1,14 @@
 import { StyleSheet } from "react-native";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
-import AppFormPicker from "../components/forms/AppFormPicker";
+import {
+  AppForm,
+  AppFormField,
+  AppFormPicker,
+  SubmitButton,
+} from "../components/forms";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
@@ -71,16 +75,16 @@ export default function ListingEditScreen() {
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />
-        <AppFormField maxLenght={255} name="title" placeholder="Title" />
+        <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
-          containerWidht="30%"
-          keyBoardType="numeric"
-          maxLenght={8} //9999.99
+          containerWidth="30%"
+          keyboardType="numeric"
+          maxLength={8} //9999.99
           name="price"
           placeholder="Price"
         />
         <AppFormPicker
-          numColums={3}
+          numColumns={3}
           containerWidth="55%"
           items={categories}
           name="category"
@@ -88,10 +92,10 @@ export default function ListingEditScreen() {
           placeholder="Category"
         />
         <AppFormField
-          maxLenght={255}
+          maxLength={255}
           multiline
           name="description"
-          numberOfLine={3}
+          numberOfLines={2}
           placeholder="Description"
         />
         <SubmitButton title="Post" />

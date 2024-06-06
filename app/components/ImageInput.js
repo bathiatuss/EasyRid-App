@@ -2,7 +2,6 @@ import {
   TouchableWithoutFeedback,
   View,
   StyleSheet,
-  Touchablei,
   Image,
   Alert,
 } from "react-native";
@@ -14,7 +13,7 @@ import defaultStyles from "../config/styles";
 
 export default function ImageInput({ imageUri, onChangeImage }) {
   useEffect(() => {
-    requestPermission;
+    requestPermission();
   }, []);
 
   //permission request process
@@ -37,6 +36,7 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   const selectImage = async () => {
     try {
       const result = await ImagePicker.launchImageLibraryAsync({
+        //requestMediaLibraryPermissionsAsync recommented by gpt
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
