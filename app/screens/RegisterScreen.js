@@ -22,8 +22,8 @@ export default function RegisterScreen() {
         <AppFormField
           autoCapitalize="words"
           autoCorrect={false}
-          icon="email"
-          name="name"
+          icon="account"
+          name="Name"
           placeholder="name"
         />
         <AppFormField
@@ -32,7 +32,7 @@ export default function RegisterScreen() {
           icon="email"
           keyboardType="email-address"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           textContentType="emailAddress"
         />
         <AppFormField

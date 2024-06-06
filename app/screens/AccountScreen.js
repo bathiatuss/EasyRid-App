@@ -4,27 +4,23 @@ import React from "react";
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
-import AppButon from "../components/AppButton";
-import AppText from "../components/AppText";
 import Icon from "../components/Icon";
 import ListItemSeperator from "../components/ListItemSeperator";
-
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const menuItems = [
   {
     title: "My Listings",
-    icon: { name: "format-list-bulleted" },
-    backgroundColor: colors.primary,
+    icon: { name: "format-list-bulleted", backgroundColor: colors.primary },
+    targetScreen: "Messages",
   },
   {
     title: "My Messages",
-    icon: { name: "email" },
-    backgroundColor: colors.secondary,
+    icon: { name: "email", backgroundColor: colors.secondary },
+    targetScreen: "Messages",
   },
 ];
 
-function AccountScreen() {
+function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
@@ -45,9 +41,10 @@ function AccountScreen() {
               ImageComponent={
                 <Icon
                   name={item.icon.name}
-                  backgroundColor={item.backgroundColor}
+                  backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         ></FlatList>

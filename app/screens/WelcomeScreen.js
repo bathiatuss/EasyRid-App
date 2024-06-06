@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  StyleSheet,
-  ImageBackground,
-  requireNativeComponent,
-  View,
-  Image,
-  Text,
-} from "react-native";
+import { StyleSheet, ImageBackground, View, Image, Text } from "react-native";
 
 import colors from "../config/colors";
 import AppText from "../components/AppText";
 import AppButton from "../components/AppButton";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
@@ -26,12 +19,14 @@ function WelcomeScreen(props) {
         />
         <AppText>Sell What You Don't Need</AppText>
       </View>
-      <AppButton title="Login" onPress={() => console.log("Logged In")} />
-      <AppButton
-        title="Register"
-        backgroundColor={colors.secondary}
-        onPress={() => console.log("Registered")}
-      />
+      <View style={styles.buttonsContainer}>
+        <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+        <AppButton
+          title="Register"
+          backgroundColor={colors.secondary}
+          onPress={() => navigation.navigate("Register")}
+        />
+      </View>
     </ImageBackground>
   );
 }
@@ -47,6 +42,10 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     marginBottom: 15,
+  },
+  buttonsContainer: {
+    padding: 20,
+    width: "100%",
   },
 });
 

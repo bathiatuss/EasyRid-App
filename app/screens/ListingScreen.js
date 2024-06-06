@@ -1,14 +1,13 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import Screen from "../components/Screen";
 import Card from "../components/Card";
 import { FlatList } from "react-native";
-import colors from "../config/colors";
 
 const listings = [
   {
     id: 1,
-    title: "Red jacket for sale",
+    title: "Sıla's Red jacket for sale",
     price: 100,
     image: require("../assets/jacket.jpg"),
   },
@@ -20,13 +19,13 @@ const listings = [
   },
   {
     id: 3,
-    title: "Couch in great condition",
-    price: 1000,
+    title: "Yaren's Couch in great condition",
+    price: 1500,
     image: require("../assets/couch.jpg"),
   },
 ];
 
-function ListingScreen(props) {
+function ListingScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -37,6 +36,7 @@ function ListingScreen(props) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
           />
         )}
       />
