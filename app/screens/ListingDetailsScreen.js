@@ -1,6 +1,5 @@
 import React from "react";
-import Card from "../components/Card";
-import { View, Image, StyleSheet, Text } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 
 import AppText from "../components/AppText";
 import colors from "../config/colors";

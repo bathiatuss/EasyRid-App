@@ -1,6 +1,5 @@
-import { View, Text } from "react-native";
 import React from "react";
-import { Formik, useFormikContext } from "formik";
+import { useFormikContext } from "formik";
 
 import AppPicker from "../AppPicker";
 import ErrorMessage from "./ErrorMessage";

@@ -79,7 +79,7 @@ export default function ListingEditScreen() {
         <AppFormField
           containerWidth="30%"
           keyboardType="numeric"
-          maxLength={8} //9999.99
+          maxLength={8} //max 9999.99
           name="price"
           placeholder="Price"
         />

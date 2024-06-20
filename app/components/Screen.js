@@ -1,13 +1,11 @@
 import {
   StyleSheet,
-  Text,
   View,
   Platform,
   StatusBar,
   SafeAreaView,
 } from "react-native";
 import React from "react";
-import colors from "../config/colors";
 
 function Screen({ children, style }) {
   return (
