@@ -1,7 +1,3 @@
-This is a mobile app built with React Native for local item buying and selling. Users can list items for sale, browse listings, and communicate directly within the app.
-
----
-
 # DoneWithIt
 
 DoneWithIt is a mobile app built with React Native for buying and selling items locally. Users can post items they want to sell, browse items available for purchase, and chat with sellers directly within the app.
