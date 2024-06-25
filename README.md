@@ -25,27 +25,6 @@ DoneWithIt is a mobile app built with React Native for buying and selling items 
 
 ---
 
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/bathiatuss/DoneWithIt.git
-   cd DoneWithIt
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. Follow the instructions in the [documentation](https://github.com/bathiatuss/DoneWithIt/wiki) to set up the backend and run the app on a simulator or device.
-
----
-
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute:
