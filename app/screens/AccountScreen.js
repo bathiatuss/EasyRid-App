@@ -12,7 +12,7 @@ const menuItems = [
   {
     title: "My Listings",
     icon: { name: "format-list-bulleted", backgroundColor: colors.primary },
-    targetScreen: routes.MESSAGES,
+    targetScreen: routes.MESSAGES, //TODO: fix the targetScreen property later
   },
   {
     title: "My Messages",

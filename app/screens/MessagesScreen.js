@@ -11,7 +11,7 @@ const initialMessages = [
   {
     id: 1,
     title: "About Chairs",
-    description: "Hello is those chairs still on sail?",
+    description: "Hello is those chairs still on sale?",
     image: require("../assets/mosh.jpg"),
   },
   {

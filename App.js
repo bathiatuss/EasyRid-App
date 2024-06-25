@@ -27,7 +27,7 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 // import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 // import MessagesScreen from "./app/screens/MessagesScreen";
 // import AccountScreen from "./app/screens/AccountScreen";
-import ListingScreen from "./app/screens/ListingScreen";
+import ListingsScreen from "./app/screens/ListingsScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import AccountScreen from "./app/screens/AccountScreen";
 import AuthNavigator from "./app/navigation/AuthNavigator";

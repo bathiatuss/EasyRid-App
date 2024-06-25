@@ -26,7 +26,7 @@ const listings = [
   },
 ];
 
-function ListingScreen({ navigation }) {
+function ListingsScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <FlatList
@@ -47,4 +47,4 @@ function ListingScreen({ navigation }) {
 
 const styles = StyleSheet.create({});
 
-export default ListingScreen;
+export default ListingsScreen;
