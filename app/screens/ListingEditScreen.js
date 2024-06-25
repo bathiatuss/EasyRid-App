@@ -74,12 +74,13 @@ export default function ListingEditScreen() {
         onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
+        //FIXME: image not shown on screen and can't delete!
         <FormImagePicker name="images" />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           containerWidth="30%"
           keyboardType="numeric"
-          maxLength={8} //max 9999.99
+          maxLength={8} //TODO:max 9999.99
           name="price"
           placeholder="Price"
         />

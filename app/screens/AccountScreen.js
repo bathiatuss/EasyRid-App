@@ -5,14 +5,14 @@ import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import Icon from "../components/Icon";
-import ListItemSeperator from "../components/ListItemSeperator";
+import ListItemSeparator from "../components/ListItemSeparator";
 import routes from "../navigation/routes";
 
 const menuItems = [
   {
     title: "My Listings",
     icon: { name: "format-list-bulleted", backgroundColor: colors.primary },
-    targetScreen: routes.MESSAGES, //TODO: fix the targetScreen property later
+    targetScreen: routes.MESSAGES, //FIXME: fix the targetScreen property later
   },
   {
     title: "My Messages",
@@ -25,9 +25,9 @@ function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
-        <ListItem
-          title={"atakan"}
-          subTitle={"atakanbaltac-1@hotmail.com"}
+        <ListItem //FIXME:  its not shown on screen
+          title="atakan"
+          subTitle="atakanbaltac-1@hotmail.com"
           image={require("../assets/mosh.jpg")}
         />
       </View>
@@ -35,11 +35,11 @@ function AccountScreen({ navigation }) {
         <FlatList
           data={menuItems}
           keyExtractor={(menuItems) => menuItems.item}
-          ItemSeparatorComponent={ListItemSeperator}
+          ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
-              ImageComponent={
+              ListItemSeparator={
                 <Icon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
@@ -52,7 +52,7 @@ function AccountScreen({ navigation }) {
       </View>
       <ListItem
         title={"Log Out"}
-        ImageComponent={
+        ListItemSeparator={
           <Icon name={"logout"} backgroundColor={colors.yellow} />
         }
       />
@@ -61,8 +61,12 @@ function AccountScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  screen: { backgroundColor: colors.light },
-  container: { marginVertical: 20 },
+  screen: {
+    backgroundColor: colors.light,
+  },
+  container: {
+    marginVertical: 20,
+  },
 });
 
 export default AccountScreen;

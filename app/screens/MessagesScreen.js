@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
-import ListItemSeperator from "../components/ListItemSeperator";
+import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
 const initialMessages = [
@@ -56,7 +56,7 @@ function MessagesScreen() {
             showChevrons={true}
           />
         )}
-        ItemSeparatorComponent={ListItemSeperator}
+        ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
         onRefresh={() => {
           //that an example. its not functional.

@@ -1,32 +1,31 @@
 import React from "react";
 import { View, Image, StyleSheet, TouchableHighlight } from "react-native";
-import AppText from "./AppText";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-
-import colors from "../config/colors";
-import Swipeable from "react-native-gesture-handler/Swipeable";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import Swipeable from "react-native-gesture-handler/Swipeable";
+
+import AppText from "./AppText";
+import colors from "../config/colors";
 
 function ListItem({
   title,
-  titleLines, //testing
+  titleLines = 1, //TODO: testing
   subTitle,
-  subTitleLines, //testing
+  subTitleLines = 2, //TODO: testing
   image,
-  ImageComponent,
+  ListItemSeparator,
   onPress,
   renderRightActions,
-  showChevrons,
+  showChevrons = true,
 }) {
   return (
     <GestureHandlerRootView>
-      {
-        //swipeable component is not working properly. we need to wrap it inside the gestureHandlerRootView
-      }
+      {/*FIXME: swipeable component is not working properly. we need to wrap it
+      inside the gestureHandlerRootView*/}
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
           <View style={styles.container}>
-            {ImageComponent}
+            {ListItemSeparator}
             {image && <Image style={styles.image} source={image}></Image>}
             <View style={styles.detailsContainer}>
               <AppText numberOfLines={titleLines} style={styles.title}>
@@ -54,14 +53,27 @@ function ListItem({
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     flexDirection: "row",
     padding: 15,
-    alignItems: "center",
+    backgroundColor: colors.white,
   },
-  chevron: { flex: 1, justifyContent: "center" },
-  detailsContainer: { flex: 1, marginLeft: 10, justifyContent: "center" },
-  image: { height: 70, width: 70, borderRadius: 35 },
-  subTitle: { color: colors.medium },
+  detailsContainer: {
+    flex: 1,
+    marginLeft: 10,
+    justifyContent: "center",
+  },
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+  },
+  subTitle: {
+    color: colors.medium,
+  },
+  title: {
+    fontWeight: "500",
+  },
 });
 
 export default ListItem;

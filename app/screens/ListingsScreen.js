@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { FlatList } from "react-native";
+
+import colors from "../config/colors";
+import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import Card from "../components/Card";
-import { FlatList } from "react-native";
-import routes from "../navigation/routes";
-
 const listings = [
   {
     id: 1,
@@ -45,6 +46,11 @@ function ListingsScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    //padding: 20, removed for rational adjustment
+    backgroundColor: colors.light,
+  },
+});
 
 export default ListingsScreen;
