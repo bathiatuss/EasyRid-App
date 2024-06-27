@@ -1,0 +1,130 @@
+iOS Bundled 55ms C:\Users\ataka\OneDrive\Masaüstü\Mobil\React Native\DoneWithIt\node_modules\expo\AppEntry.js (1 module)
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+ ERROR  Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `VirtualizedList`. See https://reactjs.org/link/warning-keys for more information.
+    at CellRenderer (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:92472:36)
+    in VirtualizedList (created by FlatList)
+    in FlatList (created by AccountScreen)
+    in RCTView (created by View)
+    in View (created by AccountScreen)
+    in RCTView (created by View)
+    in View (created by Screen)
+    in RCTSafeAreaView (created by Screen)
+    in Screen (created by AccountScreen)
+    in AccountScreen (created by SceneView)
+    in StaticContainer
+    in EnsureSingleNavigator (created by SceneView)
+    in SceneView (created by SceneView)
+    in RCTView (created by View)
+    in View (created by DebugContainer)
+    in DebugContainer (created by MaybeNestedStack)
+    in MaybeNestedStack (created by SceneView)
+    in RCTView (created by View)
+    in View (created by SceneView)
+    in RNSScreen (created by Animated(Anonymous))
+    in Animated(Anonymous) (created by InnerScreen)
+    in Suspender (created by Freeze)
+    in Suspense (created by Freeze)
+    in Freeze (created by DelayedFreeze)
+    in DelayedFreeze (created by InnerScreen)
+    in InnerScreen (created by Screen)
+    in Screen (created by SceneView)
+    in SceneView (created by NativeStackViewInner)
+    in Suspender (created by Freeze)
+    in Suspense (created by Freeze)
+    in Freeze (created by DelayedFreeze)
+    in DelayedFreeze (created by ScreenStack)
+    in RNSScreenStack (created by ScreenStack)
+    in ScreenStack (created by NativeStackViewInner)
+    in NativeStackViewInner (created by NativeStackView)
+    in RCTView (created by View)
+    in View (created by SafeAreaProviderCompat)
+    in SafeAreaProviderCompat (created by NativeStackView)
+    in NativeStackView (created by NativeStackNavigator)
+    in PreventRemoveProvider (created by NavigationContent)
+    in NavigationContent
+    in Unknown (created by NativeStackNavigator)
+    in NativeStackNavigator (created by AccountNavigator)
+    in AccountNavigator (created by SceneView)
+    in StaticContainer
+    in EnsureSingleNavigator (created by SceneView)
+    in SceneView (created by BottomTabView)
+    in RCTView (created by View)
+    in View (created by Screen)
+    in RCTView (created by View)
+    in View (created by Background)
+    in Background (created by Screen)
+    in Screen (created by BottomTabView)
+    in RNSScreen (created by Animated(Anonymous))
+    in Animated(Anonymous) (created by InnerScreen)
+    in Suspender (created by Freeze)
+    in Suspense (created by Freeze)
+    in Freeze (created by DelayedFreeze)
+    in DelayedFreeze (created by InnerScreen)
+    in InnerScreen (created by Screen)
+    in Screen (created by MaybeScreen)
+    in MaybeScreen (created by BottomTabView)
+    in RNSScreenNavigationContainer (created by ScreenContainer)
+    in ScreenContainer (created by MaybeScreenContainer)
+    in MaybeScreenContainer (created by BottomTabView)
+    in RNCSafeAreaProvider (created by SafeAreaProvider)
+    in SafeAreaProvider (created by SafeAreaProviderCompat)
+    in SafeAreaProviderCompat (created by BottomTabView)
+    in BottomTabView (created by BottomTabNavigator)
+    in PreventRemoveProvider (created by NavigationContent)
+    in NavigationContent
+    in Unknown (created by BottomTabNavigator)
+    in BottomTabNavigator (created by AppNavigator)
+    in AppNavigator (created by App)
+    in EnsureSingleNavigator
+    in BaseNavigationContainer
+    in ThemeProvider
+    in NavigationContainerInner (created by App)
+    in App (created by withDevTools(App))
+    in withDevTools(App)
+    in RCTView (created by View)
+    in View (created by AppContainer)
+    in RCTView (created by View)
+    in View (created by AppContainer)
+    in AppContainer
+    in main(RootComponent)
+ WARN  Found screens with the same name nested inside one another. Check:
+
+Account, Account > Account
+
+This can cause confusing behavior during navigation. Consider using unique names for each screen instead.
+    at BaseNavigationContainer (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:154763:28)
+    at ThemeProvider (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:160745:21)
+    at NavigationContainerInner (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:160619:26)
+    at App
+    at withDevTools(App) (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:130124:27)
+    at RCTView
+    at View (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:74659:43)
+    at RCTView
+    at View (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:74659:43)
+    at AppContainer (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:74502:25)
+    at main(RootComponent) (http://192.168.0.106:8081/node_modules%5Cexpo%5CAppEntry.bundle//&platform=ios&dev=true&hot=false&transform.engine=hermes&transform.bytecode=true&transform.routerRoot=app:118009:28)
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "D2", "id": 2, "image": 24, "title": "T2"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "Hello is those chairs still on sale?", "id": 1, "image": 24, "title": "About Chairs"}
+ LOG  Message Selected {"description": "D2", "id": 2, "image": 24, "title": "T2"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}
+ LOG  Message Selected {"description": "D2", "id": 2, "image": 24, "title": "T2"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}
+ LOG  Message Selected {"description": "D2", "id": 2, "image": 24, "title": "T2"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}
+ LOG  Message Selected {"description": "D3", "id": 3, "image": 24, "title": "T3"}

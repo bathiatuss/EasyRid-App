@@ -21,7 +21,7 @@ function ListItem({
   return (
     <GestureHandlerRootView>
       {/*FIXME: swipeable component is not working properly. we need to wrap it
-      inside the gestureHandlerRootView*/}
+      inside the gestureHandlerRootView.*/}
       <Swipeable renderRightActions={renderRightActions}>
         <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
           <View style={styles.container}>

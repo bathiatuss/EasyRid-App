@@ -74,8 +74,10 @@ export default function ListingEditScreen() {
         onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
-        //FIXME: image not shown on screen and can't delete!
-        <FormImagePicker name="images" />
+        <FormImagePicker
+          name="images"
+          //FIXME: image not shown on screen and can't delete!
+        />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           containerWidth="30%"

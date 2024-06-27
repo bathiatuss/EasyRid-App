@@ -5,7 +5,7 @@ import {
   Image,
   Alert,
 } from "react-native";
-import { React, useState, useEffect } from "react";
+import { React, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 

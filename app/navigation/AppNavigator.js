@@ -41,7 +41,12 @@ const AppNavigator = () => (
       })}
     />
     <Tab.Screen
-      name="Account"
+      name="My Account"
+      /*Account - changed to My Account. causing warning.
+      WARN  Found screens with the same name nested inside one another. Check:
+      Account, Account > Account
+      This can cause confusing behavior during navigation.
+      Consider using unique names for each screen instead.*/
       component={AccountNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
