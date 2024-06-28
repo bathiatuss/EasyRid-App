@@ -7,6 +7,11 @@ iOS Bundled 55ms C:\Users\ataka\OneDrive\Masaüstü\Mobil\React Native\DoneWithI
  LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
  LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
  LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
+
+*****
+FIXME: AccountScreen Flatlist error
+*****
+
  ERROR  Warning: Each child in a list should have a unique "key" prop.
 
 Check the render method of `VirtualizedList`. See https://reactjs.org/link/warning-keys for more information.
@@ -96,6 +101,11 @@ Check the render method of `VirtualizedList`. See https://reactjs.org/link/warni
     in View (created by AppContainer)
     in AppContainer
     in main(RootComponent)
+
+*****
+FIXME: consolewarning fixed
+*****
+
  WARN  Found screens with the same name nested inside one another. Check:
 
 Account, Account > Account
