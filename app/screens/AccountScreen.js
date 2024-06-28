@@ -39,7 +39,7 @@ function AccountScreen({ navigation }) {
           renderItem={({ item }) => (
             <ListItem
               title={item.title}
-              ListItemSeparator={
+              IconComponent={
                 <Icon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
@@ -52,9 +52,7 @@ function AccountScreen({ navigation }) {
       </View>
       <ListItem
         title={"Log Out"}
-        ListItemSeparator={
-          <Icon name={"logout"} backgroundColor={colors.yellow} />
-        }
+        IconComponent={<Icon name={"logout"} backgroundColor={colors.yellow} />}
       />
     </Screen>
   );

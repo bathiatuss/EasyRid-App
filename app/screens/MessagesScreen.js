@@ -1,9 +1,8 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 
-import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
-import colors from "../config/colors";
+import ListItem from "../components/ListItem";
 import ListItemSeparator from "../components/ListItemSeparator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
@@ -11,7 +10,7 @@ const initialMessages = [
   {
     id: 1,
     title: "About Chairs",
-    description: "Hello is those chairs still on sale?",
+    description: "Hello, are those chairs still on sale?",
     image: require("../assets/mosh.jpg"),
   },
   {
@@ -33,7 +32,7 @@ function MessagesScreen() {
   const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message) => {
-    //delete this message from messages
+    // Delete this message from messages
     setMessages(messages.filter((m) => m.id !== message.id));
   };
 
@@ -41,7 +40,7 @@ function MessagesScreen() {
     <Screen>
       <FlatList
         data={messages}
-        keyExtractor={(messages) => messages.id.toString()}
+        keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
@@ -59,7 +58,7 @@ function MessagesScreen() {
         ItemSeparatorComponent={ListItemSeparator}
         refreshing={refreshing}
         onRefresh={() => {
-          //that an example. its not functional.
+          // Example refresh functionality
           setMessages([
             {
               id: 3,

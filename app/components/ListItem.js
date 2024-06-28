@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Image, StyleSheet, TouchableHighlight } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 import AppText from "./AppText";
@@ -13,41 +12,39 @@ function ListItem({
   subTitle,
   subTitleLines = 2, //TODO: testing
   image,
-  ListItemSeparator,
+  IconComponent,
   onPress,
   renderRightActions,
   showChevrons = true,
 }) {
+  //GestureHandlerRootView was moved to App.js.
+  // This caused an error as the ListItem component was not shown on the screen.
   return (
-    <GestureHandlerRootView>
-      {/*FIXME: swipeable component is not working properly. we need to wrap it
-      inside the gestureHandlerRootView.*/}
-      <Swipeable renderRightActions={renderRightActions}>
-        <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-          <View style={styles.container}>
-            {ListItemSeparator}
-            {image && <Image style={styles.image} source={image}></Image>}
-            <View style={styles.detailsContainer}>
-              <AppText numberOfLines={titleLines} style={styles.title}>
-                {title}
+    <Swipeable renderRightActions={renderRightActions}>
+      <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
+        <View style={styles.container}>
+          {IconComponent}
+          {image && <Image style={styles.image} source={image}></Image>}
+          <View style={styles.detailsContainer}>
+            <AppText numberOfLines={titleLines} style={styles.title}>
+              {title}
+            </AppText>
+            {subTitle && (
+              <AppText numberOfLines={subTitleLines} style={styles.subTitle}>
+                {subTitle}
               </AppText>
-              {subTitle && (
-                <AppText numberOfLines={subTitleLines} style={styles.subTitle}>
-                  {subTitle}
-                </AppText>
-              )}
-            </View>
-            {showChevrons && (
-              <MaterialCommunityIcons
-                name="chevron-right"
-                size={25}
-                color={colors.medium}
-              ></MaterialCommunityIcons>
             )}
           </View>
-        </TouchableHighlight>
-      </Swipeable>
-    </GestureHandlerRootView>
+          {showChevrons && (
+            <MaterialCommunityIcons
+              name="chevron-right"
+              size={25}
+              color={colors.medium}
+            ></MaterialCommunityIcons>
+          )}
+        </View>
+      </TouchableHighlight>
+    </Swipeable>
   );
 }
 
