@@ -9,7 +9,7 @@ iOS Bundled 55ms C:\Users\ataka\OneDrive\Masaüstü\Mobil\React Native\DoneWithI
  LOG  {"latitude": 40.959748872593934, "longitude": 29.292550161508185}
 
 *****
-FIXME: AccountScreen Flatlist error
+FIXME: TEST IT(FIXED on android) AccountScreen Flatlist error
 *****
 
  ERROR  Warning: Each child in a list should have a unique "key" prop.
