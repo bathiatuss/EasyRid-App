@@ -1,5 +1,5 @@
-import { View, StyleSheet, FlatList } from "react-native";
 import React from "react";
+import { View, StyleSheet, FlatList } from "react-native";
 
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
@@ -25,8 +25,8 @@ function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
-        <ListItem //FIXME:  its not shown on screen
-          title="atakan"
+        <ListItem
+          title="Atakan"
           subTitle="atakanbaltac-1@hotmail.com"
           image={require("../assets/mosh.jpg")}
         />
@@ -34,7 +34,7 @@ function AccountScreen({ navigation }) {
       <View style={styles.container}>
         <FlatList
           data={menuItems}
-          keyExtractor={(menuItems) => menuItems.item}
+          keyExtractor={(item) => item.title}
           ItemSeparatorComponent={ListItemSeparator}
           renderItem={({ item }) => (
             <ListItem
@@ -48,11 +48,12 @@ function AccountScreen({ navigation }) {
               onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
-        ></FlatList>
+        />
       </View>
       <ListItem
         title={"Log Out"}
         IconComponent={<Icon name={"logout"} backgroundColor={colors.yellow} />}
+        onPress={() => console.log("Log Out")}
       />
     </Screen>
   );

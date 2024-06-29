@@ -71,7 +71,11 @@ export default function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(location)}
+        onSubmit={(values) => {
+          //The values parameter represents the values of the form fields
+          console.log("Form Values:", values);
+          console.log("Location:", location);
+        }}
         validationSchema={validationSchema}
       >
         <FormImagePicker
