@@ -66,7 +66,7 @@ export default function ListingEditScreen() {
       <AppForm
         initialValues={{
           title: "",
-          price: "", //it must be string
+          price: "", //it must be string!
           description: "",
           category: null,
           images: [],
@@ -76,13 +76,13 @@ export default function ListingEditScreen() {
       >
         <FormImagePicker
           name="images"
-          //FIXME: image not shown on screen and can't delete!
+          //FIXME: FIXED image not shown on screen and can't delete!
         />
         <AppFormField maxLength={255} name="title" placeholder="Title" />
         <AppFormField
           containerWidth="30%"
           keyboardType="numeric"
-          maxLength={8} //TODO:max 9999.99
+          maxLength={8} //TODO: max 9999.99 increase the value later
           name="price"
           placeholder="Price"
         />
@@ -108,5 +108,7 @@ export default function ListingEditScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 10 },
+  container: {
+    padding: 10,
+  },
 });

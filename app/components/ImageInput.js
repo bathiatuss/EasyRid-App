@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {
   TouchableWithoutFeedback,
   View,
@@ -5,7 +6,6 @@ import {
   Image,
   Alert,
 } from "react-native";
-import { React, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -16,13 +16,13 @@ export default function ImageInput({ imageUri, onChangeImage }) {
     requestPermission();
   }, []);
 
-  //permission request process
+  // Permission request process
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) alert("You need to enable permission to library");
+    if (!granted) alert("You need to enable permission to access the library");
   };
 
-  //handeling press event
+  // Handling press event
   const handlePress = () => {
     if (!imageUri) selectImage();
     else
@@ -32,15 +32,14 @@ export default function ImageInput({ imageUri, onChangeImage }) {
       ]);
   };
 
-  //image selection
+  // Image selection
   const selectImage = async () => {
     try {
       const result = await ImagePicker.launchImageLibraryAsync({
-        //requestMediaLibraryPermissionsAsync recommented by gpt
         mediaTypes: ImagePicker.MediaTypeOptions.Images,
         quality: 0.5,
       });
-      if (!result.canceled) onChangeImage(result.uri);
+      if (!result.canceled) onChangeImage(result.assets[0].uri);
     } catch (error) {
       console.log("Error reading an image", error);
     }
@@ -61,6 +60,7 @@ export default function ImageInput({ imageUri, onChangeImage }) {
     </TouchableWithoutFeedback>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
