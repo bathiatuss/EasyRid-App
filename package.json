@@ -9,11 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/webpack-config": "~19.0.1",
     "@react-native-community/hooks": "^3.0.0",
     "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
+    "apisauce": "^3.0.1",
+    "axios": "^1.7.2",
     "expo": "^51.0.16",
     "expo-image-picker": "^15.0.6",
     "expo-location": "~17.0.1",
