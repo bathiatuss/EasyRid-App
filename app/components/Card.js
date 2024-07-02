@@ -8,12 +8,12 @@ import React from "react";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image, onPress, numberOfLines }) {
+function Card({ title, subTitle, imageUrl, onPress, numberOfLines }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.background}>
         <View style={styles.cardContainer}>
-          <Image style={styles.image} source={image} />
+          <Image style={styles.image} source={{ uri: imageUrl }} />
           <View style={styles.detailsContainer}>
             <AppText numberOfLines={numberOfLines} style={styles.title}>
               {title}

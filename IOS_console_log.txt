@@ -103,7 +103,7 @@ Check the render method of `VirtualizedList`. See https://reactjs.org/link/warni
     in main(RootComponent)
 
 *****
-FIXME: consolewarning fixed
+FIXME: FIXED consolewarning fixed
 *****
 
  WARN  Found screens with the same name nested inside one another. Check:
