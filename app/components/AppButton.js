@@ -3,14 +3,14 @@ import React from "react";
 
 import colors from "../config/colors";
 
-function AppButton({ title, backgroundColor, onPress }) {
-  const buttonStyle = {
-    ...styles.button,
-    backgroundColor: backgroundColor || colors.primary,
-  };
-
+//TODO: Check out the backgroundColor parameter.
+// Change it to color and fix the related bugs
+function AppButton({ title, backgroundColor = "primary", onPress }) {
   return (
-    <TouchableOpacity style={buttonStyle} onPress={onPress}>
+    <TouchableOpacity
+      style={[styles.button, { backgroundColor: colors[backgroundColor] }]}
+      onPress={onPress}
+    >
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
