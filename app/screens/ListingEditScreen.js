@@ -72,7 +72,7 @@ export default function ListingEditScreen() {
           images: [],
         }}
         onSubmit={(values) => {
-          //The values parameter represents the values of the form fields
+          //TODO: The values parameter represents the values of the form fields
           console.log("Form Values:", values);
           console.log("Location:", location);
         }}
