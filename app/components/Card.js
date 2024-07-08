@@ -8,7 +8,7 @@ import React from "react";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, imageUrl, onPress, numberOfLines }) {
+function Card({ title, subTitle, imageUrl, onPress, numberOfLines = 2 }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.background}>

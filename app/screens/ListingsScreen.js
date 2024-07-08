@@ -16,20 +16,20 @@ function ListingsScreen({ navigation }) {
   const getListingsApi = useApi(listingsApi.getListings);
 
   useEffect(() => {
-    getListingsApi.request(1, 2, 3);
+    getListingsApi.request(); //you can pass parameter. for example:(1,2,3)
   }, []);
 
   return (
     <Screen style={styles.screen}>
       {getListingsApi.error && (
         <>
-          <AppText>Couldn' the retrieve the listings.</AppText>
+          <AppText>Couldn't retrieve the listings.</AppText>
           <AppButton title="Retry" onPress={loadListings} />
         </>
       )}
       <ActivityIndicator
         visible={getListingsApi.loading}
-        //FIXME: not shown on the screen
+        //FIXME: FIXED not shown on the screen
       />
       <FlatList
         data={getListingsApi.data}
@@ -38,7 +38,7 @@ function ListingsScreen({ navigation }) {
           <Card
             title={item.title}
             subTitle={"$" + item.price}
-            imageUrl={item.images[0].url}
+            imageUrl={item.images[0].url} //FIXME: cannot read property "url" of undefined
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
