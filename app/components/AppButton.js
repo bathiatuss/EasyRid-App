@@ -3,8 +3,8 @@ import React from "react";
 
 import colors from "../config/colors";
 
-//TODO: Check out the backgroundColor parameter.
-// Change it to color and fix the related bugs
+//FIXME: Check out the backgroundColor parameter.
+// Change it to color(./config/colors) and fix the related bugs
 function AppButton({ title, backgroundColor = "primary", onPress }) {
   return (
     <TouchableOpacity

@@ -12,7 +12,7 @@ const menuItems = [
   {
     title: "My Listings",
     icon: { name: "format-list-bulleted", backgroundColor: colors.primary },
-    targetScreen: routes.MESSAGES, //FIXME: fix the targetScreen property later
+    targetScreen: routes.MESSAGES, //FIXME: change the targetScreen property later(mylistings)
   },
   {
     title: "My Messages",

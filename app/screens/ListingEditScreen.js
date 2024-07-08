@@ -12,7 +12,6 @@ import {
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
-import useApi from "../hooks/useApi";
 import listingsApi from "../api/listings";
 import UploadScreen from "./UploadScreen";
 
@@ -64,16 +63,15 @@ const categories = [
 export default function ListingEditScreen() {
   const location = useLocation();
 
-  //TODO: DONE check out the source control!
-  const postListingsApi = useApi(listingsApi.postListings);
+  //TODO: DONE check out the source control for bugs!
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploadVisible, setUploadVisible] = useState(false);
 
-  const handleSubmit = async (listing) => {
+  const handleSubmit = async (listing, { resetForm }) => {
     setUploadProgress(0);
     setUploadVisible(true);
     const result = await listingsApi.postListings(
-      { ...listing }, //FIXME: include the location data later
+      { ...listing, location }, //FIXME: FIXED include the location data later
       (uploadProgress) => setUploadProgress(uploadProgress)
     );
 
@@ -81,6 +79,8 @@ export default function ListingEditScreen() {
       setUploadVisible(false);
       return alert("Couldn't save the listing");
     }
+
+    resetForm(); //values property added later! it was parameterless func
   };
 
   return (
@@ -95,7 +95,7 @@ export default function ListingEditScreen() {
       <AppForm
         initialValues={{
           title: "",
-          price: "", //It must be string!
+          price: "", //It must be string
           description: "",
           category: null,
           images: [],
@@ -107,13 +107,19 @@ export default function ListingEditScreen() {
           name="images"
           //FIXME: FIXED image not shown on screen and can't delete!
         />
-        <AppFormField maxLength={255} name="title" placeholder="Title" />
+        <AppFormField
+          maxLength={255}
+          name="title"
+          placeholder="Title"
+          //FIXME:NOT RESETING
+        />
         <AppFormField
           containerWidth="30%"
           keyboardType="numeric"
           maxLength={8} //TODO: max 9999.99 increase the value later
           name="price"
           placeholder="Price"
+          //FIXME:NOT RESETING
         />
         <AppFormPicker
           numColumns={3}
@@ -129,6 +135,7 @@ export default function ListingEditScreen() {
           name="description"
           numberOfLines={2}
           placeholder="Description"
+          //FIXME:NOT RESETING
         />
         <SubmitButton title="Post" />
       </AppForm>

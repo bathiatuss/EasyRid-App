@@ -10,7 +10,7 @@ function ActivityIndicator({ visible = false }) {
         flex: 1,
       }}
       autoPlay
-      loop //FIXME: the loader is so big. fix it
+      loop //FIXME: FIXED default(mosh's) loader used. the loader is so big. fix it.
       source={require("../assets/animations/loader.json")}
     />
   );

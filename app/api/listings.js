@@ -4,7 +4,7 @@ const endpoint = "/listings";
 
 const getListings = (a, b, c) => apiClient.get(endpoint);
 
-const postListings = (listing) => {
+const postListings = (listing, onUploadProgress) => {
   const data = new FormData();
 
   data.append("title", listing.title);
@@ -19,6 +19,9 @@ const postListings = (listing) => {
       uri: image,
     })
   );
+
+  if (listing.location)
+    data.append("location", JSON.stringify(listing.location));
 
   console.log("Posted Data:", data);
 

@@ -24,7 +24,7 @@ function ListingsScreen({ navigation }) {
       {getListingsApi.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
-          <AppButton title="Retry" onPress={loadListings} />
+          <AppButton title="Retry" onPress={getListingsApi.request} />
         </>
       )}
       <ActivityIndicator
@@ -38,7 +38,9 @@ function ListingsScreen({ navigation }) {
           <Card
             title={item.title}
             subTitle={"$" + item.price}
-            imageUrl={item.images[0].url} //FIXME: cannot read property "url" of undefined
+            imageUrl={
+              item.images && item.images.length > 0 ? item.images[0].url : null
+            } //FIXME: FIXED cannot read property "url" of undefined
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}

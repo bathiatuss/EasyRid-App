@@ -6,7 +6,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 export default function App() {
   return (
     /*
-    FIXME: upgrade the expo to @latest
+    FIXME: FIXED upgrade the expo to @latest
     The following packages should be updated for best compatibility with the installed expo version:
     expo@51.0.16 - expected version: ~51.0.17
     Your project may not work correctly until you install the expected versions of the packages.

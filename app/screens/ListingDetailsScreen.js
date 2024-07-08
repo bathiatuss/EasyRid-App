@@ -16,7 +16,7 @@ function ListingDetailsScreen({ route }) {
         <AppText style={styles.price}>${listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem //FIXME: FIXED its not shown on screen
-            image={require("../assets/mosh.jpg")}
+            image={require("../assets/atakan.jpg")}
             title="Atakan Baltacı"
             subTitle="5 Listings"
           />
