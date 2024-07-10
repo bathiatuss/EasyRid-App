@@ -77,15 +77,15 @@ export default function ListingEditScreen() {
 
     if (!result.ok) {
       setUploadVisible(false);
-      return alert("Couldn't save the listing");
+      return alert("Couldn't save the listing"); //FIXME: STILL causing error while uploading too many images.
     }
 
-    resetForm(); //values property added later! it was parameterless func
+    resetForm();
   };
 
   return (
     <Screen style={styles.container}>
-      <UploadScreen
+      <UploadScreen //FIXME: FIXED(with flex:1) done.json not shown on screen fully
         onDone={() => {
           setUploadVisible(false);
         }}
@@ -111,7 +111,7 @@ export default function ListingEditScreen() {
           maxLength={255}
           name="title"
           placeholder="Title"
-          //FIXME:NOT RESETING
+          //FIXME: FIXED Not reseting
         />
         <AppFormField
           containerWidth="30%"
@@ -119,7 +119,7 @@ export default function ListingEditScreen() {
           maxLength={8} //TODO: max 9999.99 increase the value later
           name="price"
           placeholder="Price"
-          //FIXME:NOT RESETING
+          //FIXME: FIXED Not reseting
         />
         <AppFormPicker
           numColumns={3}
@@ -135,7 +135,7 @@ export default function ListingEditScreen() {
           name="description"
           numberOfLines={2}
           placeholder="Description"
-          //FIXME:NOT RESETING
+          //FIXME: FIXED Not reseting
         />
         <SubmitButton title="Post" />
       </AppForm>

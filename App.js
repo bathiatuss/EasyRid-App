@@ -11,6 +11,7 @@ export default function App() {
     expo@51.0.16 - expected version: ~51.0.17
     Your project may not work correctly until you install the expected versions of the packages.
     */
+
     //GestureHandlerRootView removed from ListItem.js.
     //Swipeable component was wrapped inside.
     <GestureHandlerRootView style={{ flex: 1 }}>

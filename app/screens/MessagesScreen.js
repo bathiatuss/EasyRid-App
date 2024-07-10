@@ -11,7 +11,7 @@ const initialMessages = [
     id: 1,
     title: "About Chairs",
     description: "Hello, are those chairs still on sale?",
-    image: require("../assets/mosh.jpg"),
+    image: require("../assets/atakan.jpg"),
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const initialMessages = [
     id: 3,
     title: "T3",
     description: "D3",
-    image: require("../assets/mosh.jpg"),
+    image: require("../assets/atakan.jpg"),
   },
 ];
 
@@ -64,7 +64,7 @@ function MessagesScreen() {
               id: 3,
               title: "T3",
               description: "D3",
-              image: require("../assets/mosh.jpg"),
+              image: require("../assets/atakan.jpg"),
             },
           ]);
         }}

@@ -28,7 +28,7 @@ function AccountScreen({ navigation }) {
         <ListItem
           title="Atakan"
           subTitle="atakanbaltac-1@hotmail.com"
-          image={require("../assets/mosh.jpg")}
+          image={require("../assets/atakan.jpg")}
         />
       </View>
       <View style={styles.container}>

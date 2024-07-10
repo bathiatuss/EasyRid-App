@@ -2,9 +2,14 @@ import { View, StyleSheet, Modal } from "react-native";
 import React from "react";
 import * as Progress from "react-native-progress";
 import LottieView from "lottie-react-native";
+
 import colors from "../config/colors";
 
-export default function UploadScreen({ onDone, progress = 0, visible = true }) {
+export default function UploadScreen({
+  onDone,
+  progress = 0,
+  visible = false,
+}) {
   return (
     <Modal visible={visible}>
       <View style={styles.container}>
@@ -20,15 +25,18 @@ export default function UploadScreen({ onDone, progress = 0, visible = true }) {
             loop={false}
             onAnimationFinish={onDone}
             source={require("../assets/animations/done.json")}
+            style={styles.animation}
           />
         )}
       </View>
     </Modal>
   );
 }
+
 const styles = StyleSheet.create({
   animation: {
     width: 150,
+    flex: 1, //!!necessary!!
   },
   container: {
     alignItems: "center",

@@ -16,7 +16,7 @@ function ListingsScreen({ navigation }) {
   const getListingsApi = useApi(listingsApi.getListings);
 
   useEffect(() => {
-    getListingsApi.request(); //you can pass parameter. for example:(1,2,3)
+    getListingsApi.request();
   }, []);
 
   return (

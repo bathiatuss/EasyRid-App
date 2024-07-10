@@ -7,7 +7,7 @@ function ActivityIndicator({ visible = false }) {
   return (
     <LottieView
       style={{
-        flex: 1,
+        flex: 1, //necessary!!
       }}
       autoPlay
       loop //FIXME: FIXED default(mosh's) loader used. the loader is so big. fix it.
