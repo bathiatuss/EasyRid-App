@@ -1,10 +1,7 @@
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import React from "react";
+import { Image } from "expo-image";
+
 import AppText from "./AppText";
 import colors from "../config/colors";
 
