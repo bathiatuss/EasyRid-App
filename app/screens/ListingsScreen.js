@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useEffect } from "react";
+import { StyleSheet } from "react-native";
 import { FlatList } from "react-native";
 
 import ActivityIndicator from "../components/ActivityIndicator";
@@ -27,10 +27,7 @@ function ListingsScreen({ navigation }) {
           <AppButton title="Retry" onPress={getListingsApi.request} />
         </>
       )}
-      <ActivityIndicator
-        visible={getListingsApi.loading}
-        //FIXME: FIXED not shown on the screen
-      />
+      <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
         data={getListingsApi.data}
         keyExtractor={(listings) => listings.id.toString()}
@@ -41,8 +38,12 @@ function ListingsScreen({ navigation }) {
             imageUrl={
               item.images && item.images.length > 0 ? item.images[0].url : null
             }
-            //FIXME: FIXED cannot read property "url" of undefined
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+            thumbnailUrl={
+              item.images && item.images.length > 0
+                ? item.images[0].thumbnailUrl
+                : null
+            }
           />
         )}
       />
@@ -52,7 +53,6 @@ function ListingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    //padding: 20, //FIXME: check out - removed for rational adjustment
     backgroundColor: colors.light,
   },
 });

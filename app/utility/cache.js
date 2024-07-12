@@ -7,7 +7,7 @@ const expiryInMinutes = 5;
 const store = async (key, value) => {
   try {
     const item = { value, timeStamp: Date.now() };
-    await AsyncStorage.setItem(prefix + key, JSON.stringify(value));
+    await AsyncStorage.setItem(prefix + key, JSON.stringify(item));
   } catch (error) {
     console.log(error);
   }
@@ -37,4 +37,7 @@ const get = async (key) => {
   }
 };
 
-export default { store };
+export default {
+  store,
+  get,
+};
