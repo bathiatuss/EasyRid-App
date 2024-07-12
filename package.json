@@ -19,6 +19,7 @@
     "axios": "^1.7.2",
     "expo": "^51.0.16",
     "expo-blur": "~13.0.2",
+    "expo-image": "~1.12.12",
     "expo-image-picker": "^15.0.6",
     "expo-location": "~17.0.1",
     "expo-permissions": "~14.2.1",
