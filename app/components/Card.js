@@ -13,9 +13,6 @@ function Card({
   numberOfLines = 2,
   thumbnailUrl,
 }) {
-  console.log("Image URL:", imageUrl);
-  console.log("Thumbnail URL:", thumbnailUrl);
-
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.background}>

@@ -1,4 +1,4 @@
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView, Platform } from "react-native";
 import React from "react";
 import Constants from "expo-constants";
 
@@ -12,7 +12,8 @@ function Screen({ children, style }) {
 
 const styles = StyleSheet.create({
   screen: {
-    paddingTop: Constants.StatusBarHeight, //paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
+    //FIXME: it causes extra padding problem on listinedit and account screens
     flex: 1,
   },
   view: {
