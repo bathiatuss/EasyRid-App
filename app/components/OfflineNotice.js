@@ -8,7 +8,7 @@ import { useNetInfo } from "@react-native-community/netinfo";
 
 export default function OfflineNotice() {
   const netInfo = useNetInfo();
-  console.log(netInfo);
+  console.log(netInfo); //TODO: remove
 
   if (netInfo.type !== "unknown" && netInfo.isInternetReachable == false) {
     return (

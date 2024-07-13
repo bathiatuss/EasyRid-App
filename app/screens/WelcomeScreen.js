@@ -27,7 +27,7 @@ function WelcomeScreen({ navigation }) {
         />
         <AppButton
           title="Register"
-          backgroundColor={colors.secondary}
+          backgroundColor={"secondary"}
           onPress={() => navigation.navigate(routes.REGISTER)}
         />
       </View>

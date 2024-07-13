@@ -1,8 +1,8 @@
-import apiClient from "./client";
+import client from "./client";
 
 const endpoint = "/listings";
 
-const getListings = () => apiClient.get(endpoint);
+const getListings = () => client.get(endpoint);
 
 const postListings = (listing, onUploadProgress) => {
   const data = new FormData();
@@ -25,7 +25,7 @@ const postListings = (listing, onUploadProgress) => {
 
   console.log("Posted Data:", data);
 
-  return apiClient.post(endpoint, data, {
+  return client.post(endpoint, data, {
     headers: {
       "Content-Type": "multipart/form-data",
     },

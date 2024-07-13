@@ -1,9 +1,15 @@
 import { StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import authApi from "../api/auth";
+import {
+  ErrorMessage,
+  AppForm,
+  AppFormField,
+  SubmitButton,
+} from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -12,13 +18,24 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function RegisterScreen() {
+  const [registerFailed, setRegisterFailed] = useState(false);
+
+  const handleSubmit = async ({ name, email, password }) => {
+    const result = await authApi.register(name, email, password);
+    if (!result.ok) setRegisterFailed(true);
+
+    setRegisterFailed(false);
+    console.log(result.data);
+  };
+
   return (
     <Screen style={styles.container}>
       <AppForm
         initialValues={{ name: "", email: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
+        <ErrorMessage error="Invalid cart curt" visible={registerFailed} />
         <AppFormField
           autoCapitalize="words"
           autoCorrect={false}
