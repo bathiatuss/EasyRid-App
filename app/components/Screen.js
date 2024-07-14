@@ -12,8 +12,8 @@ function Screen({ children, style }) {
 
 const styles = StyleSheet.create({
   screen: {
-    paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
-    //FIXME: it causes extra padding problem on listinedit and account screens
+    paddingTop: Constants.StatusBarHeight, //Platform.OS === "android" ? Constants.statusBarHeight : 0, previous code
+    //FIXME: FIXED it causes extra padding problem on listinedit and account screens
     flex: 1,
   },
   view: {
