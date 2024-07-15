@@ -27,10 +27,10 @@ const getUser = async () => {
 
 const removeToken = async () => {
   try {
-    await deleteTokenSecureStore.deleteItemAsync(key);
+    await SecureStore.deleteItemAsync(key);
   } catch (error) {
     console.log("Error removing the auth token", error);
   }
 };
 
-export default { getUser, storeToken, removeToken };
+export default { getToken, getUser, storeToken, removeToken };

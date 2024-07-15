@@ -1,11 +1,7 @@
-import client from "./client";
+import client from "../api/client";
 
-const login = (email, password) => client.post("./auth", { email, password });
-
-const register = (name, email, password) =>
-  client.get("./auth", { name, email, password });
+const login = (email, password) => client.post("/auth", { email, password });
 
 export default {
   login,
-  register,
 };
