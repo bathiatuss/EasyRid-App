@@ -33,7 +33,6 @@ export default function RegisterScreen() {
     if (!result.ok) {
       if (result.data) {
         setError(result.data.error);
-        console.log(result.data.error);
       } else {
         setError("An unexpected error occurred.");
         console.log(result);
@@ -49,8 +48,9 @@ export default function RegisterScreen() {
   };
 
   {
-    /* FIXME: register is not working properly 
-     WARN  Warning: An unhandled error was caught from submitForm() [TypeError: undefined is not a function]*/
+    /* FIXME: FIXED register is not working properly 
+     WARN  Warning: An unhandled error was caught from submitForm() [TypeError: undefined is not a function]
+     */
   }
 
   return (

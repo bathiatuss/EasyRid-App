@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { StyleSheet } from "react-native";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 import ActivityIndicator from "../components/ActivityIndicator";
-import colors from "../config/colors";
 import routes from "../navigation/routes";
+import colors from "../config/colors";
 import listingsApi from "../api/listings";
 import Screen from "../components/Screen";
 import Card from "../components/Card";
