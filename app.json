@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "slug": "donewithit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -12,9 +12,12 @@
       "backgroundColor": "#e63c4b"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/d43093ef-5c76-4a60-8070-2866431a320f"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -22,11 +25,23 @@
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/splash.png",
         "backgroundColor": "#e63c4b"
-      }
+      },
+      "package": "com.atakanb.DoneWithIt"
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "plugins": ["expo-secure-store"]
+    "plugins": [
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "ec47c2e8-06c1-47f0-96ab-8f9801174867"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "owner": "atakanb"
   }
 }
