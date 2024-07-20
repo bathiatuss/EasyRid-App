@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { useEffect, useState, useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 
+import { navigationRef } from "./app/navigation/rootNavigation";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
 import OfflineNotice from "./app/components/OfflineNotice";
@@ -60,7 +61,7 @@ export default function App() {
       <AuthContext.Provider value={{ user, setUser }}>
         <OfflineNotice />
         <GestureHandlerRootView style={{ flex: 1 }}>
-          <NavigationContainer theme={navigationTheme}>
+          <NavigationContainer ref={navigationRef} theme={navigationTheme}>
             {user ? <AppNavigator /> : <AuthNavigator />}
           </NavigationContainer>
         </GestureHandlerRootView>
