@@ -1,8 +1,21 @@
 import client from "./client";
 
-const endpoint = "/listings";
+const listingsEndpoint = "/listings";
+const messagesEndpoint = "/messages";
 
-const getListings = () => client.get(endpoint);
+const postMessage = (message, listing) => {
+  const data = new FormData();
+
+  data.append("content", message);
+  data.append("listingId", listing.id);
+
+  console.log(message);
+  console.log(listing.id);
+
+  return client.post(messagesEndpoint, data);
+};
+
+const getListings = () => client.get(listingsEndpoint);
 
 const postListings = (listing, onUploadProgress) => {
   const data = new FormData();
@@ -25,7 +38,7 @@ const postListings = (listing, onUploadProgress) => {
 
   console.log("Posted Data:", data);
 
-  return client.post(endpoint, data, {
+  return client.post(listingsEndpoint, data, {
     headers: {
       "Content-Type": "multipart/form-data",
     },
@@ -40,4 +53,5 @@ const postListings = (listing, onUploadProgress) => {
 export default {
   getListings,
   postListings,
+  postMessage,
 };

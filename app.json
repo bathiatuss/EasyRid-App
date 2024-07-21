@@ -15,12 +15,12 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/d43093ef-5c76-4a60-8070-2866431a320f"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
+    "description": "A marketplace for selling the stuff don't need anymore.",
+    "notification": { "iosDisplayInForeground": true },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/splash.png",
@@ -31,9 +31,7 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "plugins": [
-      "expo-secure-store"
-    ],
+    "plugins": ["expo-secure-store"],
     "extra": {
       "eas": {
         "projectId": "ec47c2e8-06c1-47f0-96ab-8f9801174867"
