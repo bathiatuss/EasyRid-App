@@ -1,51 +1,14 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  Keyboard,
-} from "react-native";
+import { View, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
 import { Image } from "react-native-expo-image-cache";
-import * as Notifications from "expo-notifications";
-import * as Yup from "yup";
 
-import listingApi from "../api/listings";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
 import ListItem from "../components/ListItem";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import ContactSellerForm from "../components/ContactSellerForm";
 
 function ListingDetailsScreen({ route }) {
   const listing = route.params;
-
-  Notifications.setNotificationHandler({
-    handleNotification: async () => ({
-      shouldShowAlert: true,
-      shouldPlaySound: false,
-      shouldSetBadge: false,
-    }),
-  });
-
-  const validationSchema = Yup.object().shape({
-    message: Yup.string().min(5).max(255).label("message"),
-  });
-
-  const handleSubmit = async ({ message }, { resetForm }) => {
-    const result = await listingApi.postMessage(message, listing);
-    if (!result.ok) alert("Message sending failed!"); //FIXME: throwing alert even if its OK!
-    Keyboard.dismiss();
-
-    Notifications.scheduleNotificationAsync({
-      content: {
-        title: "Congratulations",
-        body: "Your message sent to seller",
-      },
-      trigger: null,
-    });
-
-    resetForm();
-  };
 
   return (
     <KeyboardAvoidingView
@@ -72,20 +35,7 @@ function ListingDetailsScreen({ route }) {
             subTitle="5 Listings"
           />
         </View>
-        <View>
-          <AppForm
-            initialValues={{ message: "" }}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            <AppFormField
-              maxLength={255}
-              name="message"
-              placeholder="Message..."
-            />
-            <SubmitButton title="Contact Seller" />
-          </AppForm>
-        </View>
+        <ContactSellerForm listing={listing} />
       </View>
     </KeyboardAvoidingView>
   );

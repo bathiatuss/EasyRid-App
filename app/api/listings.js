@@ -1,19 +1,6 @@
 import client from "./client";
 
 const listingsEndpoint = "/listings";
-const messagesEndpoint = "/messages";
-
-const postMessage = (message, listing) => {
-  const data = new FormData();
-
-  data.append("content", message);
-  data.append("listingId", listing.id);
-
-  console.log(message);
-  console.log(listing.id);
-
-  return client.post(messagesEndpoint, data);
-};
 
 const getListings = () => client.get(listingsEndpoint);
 
@@ -53,5 +40,4 @@ const postListings = (listing, onUploadProgress) => {
 export default {
   getListings,
   postListings,
-  postMessage,
 };
