@@ -21,7 +21,7 @@ function ContactSellerForm({ listing }) {
       return Alert.alert(
         "Oops",
         "Something went wrong while sending your message!"
-      ); //FIXME: FIXED throwing alert even if its OK! (messages.js created)
+      ); //FIXME: FIXED throwing alert even if its OK! (messages.js created(OK))
     }
 
     Notifications.scheduleNotificationAsync({
@@ -46,7 +46,7 @@ function ContactSellerForm({ listing }) {
           maxLength={255}
           multiline
           name="message"
-          numberOfLines={3}
+          numberOfLines={2}
           placeholder="Message..."
         />
         <SubmitButton title="Contact Seller" />

@@ -47,7 +47,7 @@ const AppNavigator = () => {
       <Tab.Screen
         name="Account"
         /*FIXME: FIXED Account - changed to My Account. causing warning.
-          FIXME: Test it. name property Changed to Account back again.
+          TODO: DONE Test it. name property Changed to Account back again.
         WARN  Found screens with the same name nested inside one another. Check:
         Account, Account > Account
         This can cause confusing behavior during navigation.

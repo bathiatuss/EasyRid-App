@@ -11,6 +11,9 @@ import OfflineNotice from "./app/components/OfflineNotice";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import AuthContext from "./app/auth/context";
 import authStorage from "./app/auth/storage";
+import logger from "./app/utility/logger";
+
+logger.start();
 
 SplashScreen.preventAutoHideAsync();
 
